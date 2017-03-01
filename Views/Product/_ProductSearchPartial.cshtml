@@ -1,10 +1,16 @@
 ﻿@model IEnumerable<AjaxLab.Models.Product>
-<table>
+
+<div class="row">
+    <h5>@ViewBag.ResultMsg</h5>
+</div>
+<br /><br />
+
+<table class="table">
     <tr>
         <th>Product ID</th>
         <th>Product Name</th>
-        <th>Supplier ID</th>
-        <th>Category ID</th>
+        <th>Category</th>
+        <th>Supplier</th>
         <th>Unit Price</th>
     </tr>
     @foreach (var item in Model)
@@ -12,8 +18,8 @@
         <tr>
             <td>@item.ProductID</td>
             <td>@item.ProductName</td>
-            <td>@item.CategoryID</td>
-            <td>@item.SupplierID</td>
+            <td>@item.Category.CategoryName</td>
+            <td>@item.Supplier.CompanyName</td>
             <td>@item.UnitPrice</td>
         </tr>
     }
